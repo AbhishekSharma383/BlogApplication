@@ -1,0 +1,44 @@
+<% if @posts.any? %>
+  <div class="container mt-5">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <% if post.image.present? %>
+              <div class="card-img-container">
+                <%= image_tag post.image.url, class: "fixed-size-image" %>
+              </div>
+            <% end %>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><%= link_to post.title, post %></h5>
+              <p class="card-text"><%= truncate(post.content, length: 100) %></p>
+              <p class="text-muted">By <%= post.author %></p>
+              <% if post.video.present? %>
+                <video width="100%" controls class="mt-2">
+                  <source src="<%= post.video.url %>" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              <% end %>
+              <% if user_signed_in? && post.user == current_user %>
+                <div class="mt-auto">
+                  <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-primary mr-2' %>
+                  <%= button_to 'Delete', post_path(post), method: :delete, class: 'btn btn-danger' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="pagination justify-content-center mt-4">
+      <%= will_paginate @posts, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+    </div>
+  </div>
+<% else %>
+  <div class="container mt-5">
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">No Posts Available</h4>
+      <p>It looks like there are no posts yet. Why not <%= link_to 'create one', new_post_path %>?</p>
+    </div>
+  </div>
+<% end %>
