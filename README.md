@@ -32,19 +32,6 @@ Web application is created using Object relation mapping where users can create 
 
 
 
-
-The post and comment have 1 to many active record association meaning 1 post can have many comments. In future I plan to incorporate advanced concepts such as polymorphic associations in this web app.<br>
-![ERD](./images/1.ERD.png)
-
-## How to run this project locally?
-1. Fork the project.
-2. Run `bundle install`
-3. Run `rake db:migrate`
-4. Run `bin/rails server`
-
-
-
-
 1. Clone the repository in to you're machine . 
 2. I have Used -> 
    * Ruby 3.1.2 
@@ -64,12 +51,12 @@ I have customised the defualt view of devise Gem .
 
 * I am attaching , the Screenshots , of the Web Application Below . 
 
-  Sign Up Page  ->  ![alt text](<SignUp Page.png>)
-  Log In Page ->  ![alt text](<Log In Page.png>)
-  Home Page ->  ![alt text](Homepage.png)
-  Adding New Post To App-> ![alt text](<New Post Functionality.png>)
-  Edit Post Function ->   ![alt text](<Edit Post Functionality.png>)
-  Edit And Delete Function to Authenticated users -> ![alt text](<Edit and Delete functionality on a apost available to signed in user to his own posts .png>)
-  Comments Visisble on Post Of all Users -> ![alt text](<Different Users Comments Visible On Post.png>)
-  Delete Comment Functionality , For Authenticated Users :: ![alt text](<Delete comment functionality only to comments user .png>)
-  LogOut Function -> ![alt text](<Logout Functionality.png>)
+  Sign Up Page  -> app/assets/images/readme/sign_up.png
+  Log In Page ->  app/assets/images/readme/log_in.png
+  Home Page ->  app/assets/images/readme/Homepage.png
+  Adding New Post To App-> app/assets/images/readme/new_post.png
+  Edit Post Function ->  app/assets/images/readme/edit_post.png
+  Edit And Delete Function to Authenticated users -> app/assets/images/readme/edit_and_delete_func_on_a_post_Available_to_auth_user.png
+  Comments Visisble on Post Of all Users -> app/assets/images/readme/different_user_comments_visible_only_on_post.png
+  Delete Comment Functionality , For Authenticated Users -> app/assets/images/readme/delete_comment_func_only_to_comments_to_user.png
+  LogOut Function -> app/assets/images/readme/logout.png
